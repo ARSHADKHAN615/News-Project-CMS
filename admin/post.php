@@ -71,7 +71,7 @@
                 <ul class='pagination admin-pagination'>
                     <?php
                     if ($page > 1) {
-                        echo "<li><a href='post.php?page=" . ($page - 1) . "'>Prev</a></li>";
+                        echo "<li><a class='btn btn-primary' href='post.php?page=" . ($page - 1) . "'>Prev</a></li>";
                     }
                     $sql1 = "SELECT * FROM post";
                     $result1 = mysqli_query($connection, $sql1) or die("Query Failed.2");
@@ -82,14 +82,14 @@
 
                         for ($i = 1; $i <= $total_page; $i++) {
                             if ($i == $page) {
-                                $cls = 'btn-primary active';
+                                $cls = 'btn btn-primary active';
                             } else {
-                                $cls = 'btn-primary';
+                                $cls = 'btn btn-primary';
                             }
-                            echo "<li><a href='post.php?page=$i' class='$cls'>" . $i . "</a></li> ";
+                            echo "<li><a class='$cls' href='post.php?page=$i'>" . $i . "</a></li> ";
                         }
                         if ($total_page > $page) {
-                            echo "<li><a href='post.php?page=" . ($page + 1) . "'>Next</a></li>";
+                            echo "<li><a class='btn btn-primary' href='post.php?page=" . ($page + 1) . "'>Next</a></li>";
                         }
                     } else {
                         echo "Not Record Found";

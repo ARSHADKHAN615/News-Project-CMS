@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
 ?>
     <div id="admin-content">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-md-12">
                     <h1 class="adin-heading"> Update Category</h1>
                 </div>

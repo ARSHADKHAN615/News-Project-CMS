@@ -1,6 +1,7 @@
 <?php
 require "config.php";
 $page = basename($_SERVER['PHP_SELF']);
+$page_title = [];
 
 switch ($page) {
     case 'single.php':
@@ -59,9 +60,9 @@ switch ($page) {
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title><?php echo $page_title ?></title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/4bootstrap.min.css" />
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -72,7 +73,7 @@ switch ($page) {
         <!-- container -->
         <div class="container">
             <!-- row -->
-            <div class="row">
+            <div class="row justify-content-center">
                 <!-- LOGO -->
                 <div class=" col-md-offset-4 col-md-4">
                     <?php
@@ -84,7 +85,7 @@ switch ($page) {
                             if ($row['logo'] == "") {
                                 echo '<a href="index"><h1>' . $row['websiteName'] . '</h1></a>';
                             } else {
-                                echo '<a href="index" id="logo"><img src="admin/images/' . $row["logo"] . '"></a>
+                                echo '<a href="index"><img class="header_logo" src="admin/images/' . $row["logo"] . '"></a>
 ';
                             }
                     ?>

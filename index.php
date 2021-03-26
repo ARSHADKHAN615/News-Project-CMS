@@ -65,7 +65,7 @@ require "config.php"; ?>
                     <ul class='pagination pagination'>
                         <?php
                         if ($page > 1) {
-                            echo "<li><a href='index.php?page=" . ($page - 1) . "'>Prev</a></li>";
+                            echo "<li><a class='btn btn-primary' href='index.php?page=" . ($page - 1) . "'>Prev</a></li>";
                         }
                         $sql1 = "SELECT * FROM post";
                         $result1 = mysqli_query($connection, $sql1) or die("Query Failed.2");
@@ -76,14 +76,14 @@ require "config.php"; ?>
 
                             for ($i = 1; $i <= $total_page; $i++) {
                                 if ($i == $page) {
-                                    $cls = 'btn-primary active';
+                                    $cls = 'btn btn-primary active';
                                 } else {
-                                    $cls = 'btn-primary';
+                                    $cls = 'btn btn-primary';
                                 }
                                 echo "<li><a href='index.php?page=$i' class='$cls'>" . $i . "</a></li> ";
                             }
                             if ($total_page > $page) {
-                                echo "<li><a href='index.php?page=" . ($page + 1) . "'>Next</a></li>";
+                                echo "<li><a class='btn btn-primary' href='index.php?page=" . ($page + 1) . "'>Next</a></li>";
                             }
                         } else {
                             echo "Not Record Found";
@@ -95,6 +95,5 @@ require "config.php"; ?>
             <?php include 'sidebar.php'; ?>
         </div>
     </div>
-    <a href="http://www.youtube.com">aa</a>
 </div>
 <?php include 'footer.php'; ?>

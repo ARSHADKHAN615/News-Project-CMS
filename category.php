@@ -72,7 +72,7 @@
                     <ul class='pagination pagination'>
                         <?php
                         if ($page > 1) {
-                            echo "<li><a href='category.php?cat_id=$cat_id&page=" . ($page - 1) . "'>Prev</a></li>";
+                            echo "<li><a class='btn btn-primary' href='category.php?cat_id=$cat_id&page=" . ($page - 1) . "'>Prev</a></li>";
                         }
 
                         if (mysqli_num_rows($result1) > 0) {
@@ -82,14 +82,14 @@
 
                             for ($i = 1; $i <= $total_page; $i++) {
                                 if ($i == $page) {
-                                    $cls = 'btn-primary active';
+                                    $cls = 'btn btn-primary active';
                                 } else {
-                                    $cls = 'btn-primary';
+                                    $cls = 'btn btn-primary';
                                 }
                                 echo "<li><a href='category.php?cat_id=$cat_id&page=$i' class='$cls'>" . $i . "</a></li> ";
                             }
                             if ($total_page > $page) {
-                                echo "<li><a href='category.php?cat_id=$cat_id&page=" . ($page + 1) . "'>Next</a></li>";
+                                echo "<li><a class='btn btn-primary' href='category.php?cat_id=$cat_id&page=" . ($page + 1) . "'>Next</a></li>";
                             }
                         } else {
                             echo "<p class='lead'>Not Record Found</p>";

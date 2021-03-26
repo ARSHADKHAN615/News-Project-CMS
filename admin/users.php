@@ -71,19 +71,19 @@ if ($_SESSION['user_role'] == 0) {
 
                     echo  "<ul class='pagination admin-pagination'>";
                     if ($page > 1) {
-                        echo "<li><a href='users.php?page=" . ($page - 1) . "'>Prev</a></li>";
+                        echo "<li><a class='btn btn-primary' href='users.php?page=" . ($page - 1) . "'>Prev</a></li>";
                     }
                     for ($i = 1; $i <= $total_page; $i++) {
 
                         if ($i == $page) {
-                            $active = "active";
+                            $active = "btn btn-primary active";
                         } else {
-                            $active = "";
+                            $active = "btn btn-primary";
                         }
-                        echo "<li class='$active'><a href='users.php?page=$i'>$i</a></li>";
+                        echo "<li><a class='$active' href='users.php?page=$i'>$i</a></li>";
                     }
                     if ($total_page > $page) {
-                        echo "<li><a href='users.php?page=" . ($page + 1) . "'>Next</a></li>";
+                        echo "<li><a class='btn btn-primary' href='users.php?page=" . ($page + 1) . "'>Next</a></li>";
                     }
                     echo "</ul>";
                 } else {

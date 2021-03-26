@@ -14,7 +14,7 @@ require "config.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ADMIN | Login</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/4bootstrap.min.css" />
     <link rel="stylesheet" href="font/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -32,6 +32,7 @@ require "config.php";
 
                 $sql = "SELECT * FROM user WHERE username='$username'";
                 $result = mysqli_query($connection, $sql) or die("Query Failed");
+
                 if (mysqli_num_rows($result) == 1) {
                     $row = mysqli_fetch_assoc($result);
                     if ($password == $row['password']) {
@@ -55,17 +56,17 @@ require "config.php";
                 }
                 if ($loginAlert) {
                     echo
-                        "<div class='alert alert-success'>Your Login</div>";
+                    "<div class='alert alert-success'>Your Login</div>";
                 }
             }
             ?>
 
-            <div class="row">
-                <div class="col-md-offset-4 col-md-4">
-                    <img class="logo" src="images/news.jpg">
-                    <h3 class="heading">Admin</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <img class="logo" src="images/asa.jpg">
+                    <h3 class="heading mt-3">Admin</h3>
                     <!-- Form Start -->
-                    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" class="text-left">
                         <div class="form-group">
                             <label>Username</label>
                             <input type="text" name="username" class="form-control" placeholder="" required>

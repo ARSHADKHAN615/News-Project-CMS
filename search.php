@@ -69,7 +69,7 @@
                     <ul class='pagination pagination'>
                         <?php
                         if ($page > 1) {
-                            echo "<li><a href='search.php?search=$search_tam&page=" . ($page - 1) . "'>Prev</a></li>";
+                            echo "<li><a class='btn btn-primary' href='search.php?search=$search_tam&page=" . ($page - 1) . "'>Prev</a></li>";
                         }
                         $sql1 = "SELECT * FROM post WHERE title LIKE '%$search_tam%'";
                         $result1 = mysqli_query($connection, $sql1) or die("Query Failed:pagination");
@@ -80,14 +80,14 @@
 
                             for ($i = 1; $i <= $total_page; $i++) {
                                 if ($i == $page) {
-                                    $cls = 'btn-primary active';
+                                    $cls = 'btn btn-primary active';
                                 } else {
-                                    $cls = 'btn-primary';
+                                    $cls = 'btn btn-primary';
                                 }
                                 echo "<li><a href='search.php?search=$search_tam&page=$i' class='$cls'>" . $i . "</a></li> ";
                             }
                             if ($total_page > $page) {
-                                echo "<li><a href='search.php?search=$search_tam&page=" . ($page + 1) . "'>Next</a></li>";
+                                echo "<li><a class='btn btn-primary' href='search.php?search=$search_tam&page=" . ($page + 1) . "'>Next</a></li>";
                             }
                         } else {
                             echo "<p class='lead'>Not Record Found</p>";

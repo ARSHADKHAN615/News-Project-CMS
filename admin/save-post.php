@@ -21,6 +21,7 @@ if (isset($_FILES['fileToUpload'])) {
 
     $new_name = time() . "-" . $file_name;
     $target = "upload/" . time() . "-" . $file_name;
+
     if (empty($error) == true) {
         move_uploaded_file($file_tmp_name, $target);
     } else {

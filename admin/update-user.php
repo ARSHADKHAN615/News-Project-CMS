@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 
 <div id="admin-content">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-12">
                 <h1 class="admin-heading">Modify User Details</h1>
             </div>

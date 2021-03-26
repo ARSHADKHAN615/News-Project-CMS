@@ -1,7 +1,7 @@
 <?php include "header.php"; ?>
 <div id="admin-content">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-12">
                 <h1 class="admin-heading">Website Settings</h1>
             </div>

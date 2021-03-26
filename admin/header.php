@@ -16,9 +16,10 @@ if (!isset($_SESSION['user_name']) && !isset($_SESSION['user_id'])) {
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>ADMIN Panel</title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/4bootstrap.min.css" />
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -29,16 +30,20 @@ if (!isset($_SESSION['user_name']) && !isset($_SESSION['user_id'])) {
         <!-- container -->
         <div class="container">
             <!-- row -->
-            <div class="row">
+            <div class="row justify-content-between align-items-center">
                 <!-- LOGO -->
-                                        <div class="col-md-2">
-                                            <a href="post.php"><img class="logo" src="images/news.jpg"></a>
-                                        </div>
-                      <!-- /LOGO -->
+                <div class="col-md-2">
+                    <a href="post.php"><img class="header_logo" src="images/asa.jpg"></a>
+                </div>
+                <!-- /LOGO -->
                 <!-- LOGO-Out -->
-                <div class="col-md-offset-6  col-md-4">
-                    <a href="javascript:void(0)" class="admin-logout text-center mx-5"> Welcome <?php echo $_SESSION['user_name'] ?></a>
-                    <a href="logout.php" class="admin-logout text-center">logout</a>
+                <div class="col-offset-6 col-md-2">
+                    <div class="dropdown">
+                        <button href="javascript:void(0)" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome , <?php echo $_SESSION['user_name'] ?></button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a href="logout.php" class="dropdown-item">logout</a>
+                        </div>
+                    </div>
                 </div>
                 <!-- /LOGO-Out -->
             </div>
